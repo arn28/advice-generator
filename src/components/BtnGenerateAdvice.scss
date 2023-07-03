@@ -1,0 +1,11 @@
+@import '../utils/styles.scss';
+
+.generate-advice-button {
+  height: 64px;
+  width: 64px !important;
+  @include flex(row, center, center);
+  @include transition();
+  &.ant-btn:hover {
+    box-shadow: 0px 0px 24px $PRIMARY_NEON_GREEN;
+  }
+}
