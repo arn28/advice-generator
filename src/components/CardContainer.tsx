@@ -4,7 +4,7 @@ import { Card, Typography, message, Spin } from 'antd'
 import './CardContainer.scss'
 import { getAdvice } from '../api/endpoints'
 import { useEffect, useState } from 'react'
-import { PatternDividerDesktop } from '../images/graphics'
+import PatternDividerDesktop from '../images/pattern-divider-desktop.svg'
 const { Title, Paragraph } = Typography
 
 interface IAdviceSlip {
@@ -51,7 +51,7 @@ export const CardContainer = () => {
       ) : (
         <Paragraph className='card-container__advice'>"{advice?.advice}"</Paragraph>
       )}
-      <img className='card-container__divider' src='/pattern-divider-desktop.svg' alt='line' />
+      <img className='card-container__divider' src={PatternDividerDesktop} alt='line' />
       <BtnGenerateAdvice onClick={showAdvice} />
     </Card>
   )
