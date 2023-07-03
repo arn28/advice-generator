@@ -1,8 +1,8 @@
 import { BtnGenerateAdvice } from './BtnGenerateAdvice'
-import { Card, Typography } from 'antd'
+import { Card, Typography, message } from 'antd'
 import './CardContainer.scss'
 import { getAdvice } from '../api/endpoints'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 const { Title, Paragraph } = Typography
 
 interface IAdviceSlip {
@@ -11,28 +11,35 @@ interface IAdviceSlip {
 }
 
 export const CardContainer = () => {
-  const [advice, setAdvice] = useState<IAdviceSlip>({
+  const [advice, setAdvice] = useState<IAdviceSlip>()
+  const mockUpAdvice = {
     id: 0,
     advice: 'Practice patience and trust the process. Good things take time.',
-  })
+  }
 
   const loadAdvice = async () => {
     try {
       const response = await getAdvice()
       return response
     } catch (error) {
-      console.log(error)
+      message.error('Something went wrong, please try again')
+      setAdvice(mockUpAdvice)
     }
   }
 
   const showAdvice = async () => {
     const response = await loadAdvice()
-    if (response && response.data.slip.id !== advice.id) {
+    if (!response) return
+    if (response.data.slip.id !== advice?.id) {
       setAdvice(response.data.slip)
     } else {
       showAdvice()
     }
   }
+
+  useEffect(() => {
+    showAdvice()
+  }, [])
 
   return (
     <Card className='card-container' bordered={false}>
