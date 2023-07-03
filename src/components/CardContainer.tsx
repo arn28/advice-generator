@@ -1,8 +1,10 @@
 import { BtnGenerateAdvice } from './BtnGenerateAdvice'
-import { Card, Typography, message } from 'antd'
+import { LoadingOutlined } from '@ant-design/icons'
+import { Card, Typography, message, Spin } from 'antd'
 import './CardContainer.scss'
 import { getAdvice } from '../api/endpoints'
 import { useEffect, useState } from 'react'
+import { PatternDividerDesktop } from '../images/graphics'
 const { Title, Paragraph } = Typography
 
 interface IAdviceSlip {
@@ -12,18 +14,18 @@ interface IAdviceSlip {
 
 export const CardContainer = () => {
   const [advice, setAdvice] = useState<IAdviceSlip>()
-  const mockUpAdvice = {
-    id: 0,
-    advice: 'Practice patience and trust the process. Good things take time.',
-  }
+  const [loading, setLoading] = useState(false)
+
+  const loadingIcon = <LoadingOutlined style={{ fontSize: 48 }} spin />
 
   const loadAdvice = async () => {
+    setLoading(true)
     try {
       const response = await getAdvice()
+      setLoading(false)
       return response
     } catch (error) {
       message.error('Something went wrong, please try again')
-      setAdvice(mockUpAdvice)
     }
   }
 
@@ -44,7 +46,11 @@ export const CardContainer = () => {
   return (
     <Card className='card-container' bordered={false}>
       <Title className='card-container__title'>ADVICE # {advice?.id}</Title>
-      <Paragraph className='card-container__advice'>"{advice?.advice}"</Paragraph>
+      {loading ? (
+        <Spin indicator={loadingIcon} />
+      ) : (
+        <Paragraph className='card-container__advice'>"{advice?.advice}"</Paragraph>
+      )}
       <img className='card-container__divider' src='/pattern-divider-desktop.svg' alt='line' />
       <BtnGenerateAdvice onClick={showAdvice} />
     </Card>
