@@ -1,46 +1,58 @@
-# Getting Started with Create React App
+# Advice generator app - Frontend Mentor solution
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a solution to the [Advice generator app challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/advice-generator-app-QdUG-13db). Frontend Mentor challenges help you improve your coding skills by building realistic projects.
 
-## Available Scripts
+## Table of contents
 
-In the project directory, you can run:
+- [Overview](#overview)
+  - [The challenge](#the-challenge)
+  - [Screenshot](#screenshot)
+  - [Links](#links)
+- [My process](#my-process)
+  - [Built with](#built-with)
+  - [Continued development](#continued-development)
+- [Author](#author)
 
-### `yarn start`
+## Overview
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### The challenge
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Users should be able to:
 
-### `yarn test`
+- View the optimal layout for the app depending on their device's screen size
+- See hover states for all interactive elements on the page
+- Generate a new piece of advice by clicking the dice icon
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Screenshot
 
-### `yarn build`
+<img src="./public/desktop-design.jpg" alt="Desktop View" height="200">
+<img src="./public/mobile-design.jpg" alt="Mobile View" height="200">
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Links
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- Solution URL: [GitHub](https://github.com/arn28/advice-generator)
+- Live Site URL: [GitHub Pages](https://arn28.github.io/advice-generator)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## My process
 
-### `yarn eject`
+In my process, I began by setting up a React project using Yarn. I then installed necessary dependencies such as Ant Design v5, Axios, and Sass. With the foundation in place, I proceeded to create essential components like the CardContainer and dice Button. As the project progressed, I customized the default styles of Ant Design, adjusting colors and applying specific style properties to the components using Sass preprocessor. Leveraging Sass features like variables and mixins, I achieved the desired look and feel. Lastly, I implemented an endpoint to interact with an advice generator API. Utilizing React hooks, I fetched the API response and seamlessly integrated it into the components for display.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### Built with
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- [React](https://reactjs.org/) - JS library
+- [Ant Design](https://ant.design/) - UI component library
+- Typescript
+- CSS custom properties
+- [Sass](https://sass-lang.com/) - preprocessor
+- [Axios] (https://axios-http.com/docs/intro) promise-based HTTP Client
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+### Continued development
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+For ongoing development, there are a couple of additional features I would like to implement. Firstly, I plan to incorporate a theme switcher functionality that allows users to toggle between light and dark themes. This will enhance the user experience and cater to different preferences.
 
-## Learn More
+Additionally, I aim to integrate a translator feature to provide language localization for the advice generated. By utilizing translation APIs or libraries, users will have the option to view the advice in their preferred language, making the application more inclusive and accessible.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Author
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- Github - [Arnold Balabarca](https://github.com/arn28)
+- Frontend Mentor - [@arn28](https://www.frontendmentor.io/profile/arn28)
