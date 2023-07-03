@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;800&display=swap');
+
+$PRIMARY_LIGHT_CYAN: hsl(193, 38%, 86%);
+$PRIMARY_NEON_GREEN: hsl(150, 100%, 66%);
+$NEUTRAL_GRAYISH_BLUE: hsl(217, 19%, 38%);
+$NEUTRAL_DARK_GRAYISH_BLUE: hsl(217, 19%, 24%);
+$NEUTRAL_DARK_BLUE: hsl(218, 23%, 16%);
+$font-stack: 'Manrope', sans-serif;
+
+@mixin flex($direction, $justify, $align) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+@mixin transition($properties: all, $duration: 0.3s, $timing-function: ease-in-out) {
+  transition: $properties $duration $timing-function;
+  -webkit-transition: $properties $duration $timing-function; // Vendor prefix for webkit browsers
+  -moz-transition: $properties $duration $timing-function; // Vendor prefix for Mozilla Firefox
+  -o-transition: $properties $duration $timing-function; // Vendor prefix for Opera
+}
+
+@mixin fontStack() {
+  font-family: $font-stack;
+}

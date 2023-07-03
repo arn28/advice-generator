@@ -1,0 +1,9 @@
+@import './utils/styles.scss';
+
+.App {
+  background-color: $NEUTRAL_DARK_BLUE;
+  text-align: center;
+  height: 100vh;
+  @include flex(row, center, center);
+  padding: 20px;
+}

@@ -1,0 +1,7 @@
+export const COLORS = {
+  PRIMARY_LIGHT_CYAN: 'hsl(193, 38%, 86%)',
+  PRIMARY_NEON_GREEN: 'hsl(150, 100%, 66%)',
+  NEUTRAL_GRAYISH_BLUE: 'hsl(217, 19%, 38%)',
+  NEUTRAL_DARK_GRAYISH_BLUE: 'hsl(217, 19%, 24%)',
+  NEUTRAL_DARK_BLUE: 'hsl(218, 23%, 16%)',
+}
